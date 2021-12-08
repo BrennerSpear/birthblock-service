@@ -10,6 +10,7 @@ import { useEthereum, wrongNetworkToast } from '@providers/EthereumProvider';
 
 import { maxW } from '@components/Layout';
 
+// import { logger } from '@utils'; // can't use the backend utils in the frontend
 import { CONTRACT_ADDRESS, networkStrings } from '@utils/constants';
 import { copy } from '@utils/content';
 import { debug, event } from '@utils/frontend';
@@ -138,6 +139,7 @@ function Home() {
             event('Mint Success', eventParams);
         } catch (error) {
             // const { reason, code, error, method, transaction } = error
+            // logger.error({ error });
             setMinting(false);
             if (error?.error?.message) {
                 const eventParamsWithError = {
