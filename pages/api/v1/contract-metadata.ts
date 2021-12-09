@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         image: `https://${WEBSITE_URL}/logo.png`,
         external_link: `https://${WEBSITE_URL}`,
         seller_fee_basis_points: 800, // 8%,
-        fee_recipient: '0x7d0414B0622f485D0368602E76F502CabEf57bf4',
+        fee_recipient: '0x902A37155438982884ca26A5DBccf73f5ae8194b',
     };
 
     res.send(metadata);
