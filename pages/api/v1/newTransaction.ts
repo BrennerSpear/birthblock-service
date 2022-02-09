@@ -8,8 +8,6 @@ import {
     ioredisClient,
     isValidEventForwarderSignature,
     logger,
-    Metadata,
-    timestampToDate,
     zodiac,
 } from '@utils';
 import {
@@ -19,6 +17,7 @@ import {
     networkStrings,
     WEBSITE_URL,
 } from '@utils/constants';
+import { Metadata, timestampToDate } from '@utils/frontend';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     logger.info(req.body);
