@@ -1,15 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { timestampToDate } from '@utils';
-import { debug } from '@utils/frontend';
+import { timestampToDate } from '@utils/frontend';
 
 export function generateSVG(): string {
     const blockAge = 12900000;
     const timestamp = 1517378400;
     const dateObj = timestampToDate(timestamp);
     const { year, month } = dateObj;
-
-    debug(dateObj);
 
     /**********/
     /* Canvas */
