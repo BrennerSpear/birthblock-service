@@ -6,6 +6,8 @@ import fetch from 'node-fetch-retry';
 import pino from 'pino';
 import { logflarePinoVercel } from 'pino-logflare';
 
+import { Metadata, timestampToDate } from '@utils/frontend';
+
 import {
     ETHERSCAN_API_KEY,
     EVENT_FORWARDER_AUTH_TOKEN,
@@ -69,20 +71,6 @@ export const getOldestTransaction = async (address: string) =>
         `https://${networkStrings.etherscanAPI}etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=999999999&sort=asc&page=1&offset=1&apikey=${ETHERSCAN_API_KEY}`,
     );
 
-export const timestampToDate = (ts: number): Record<string, number> => {
-    const date = new Date(ts * 1000);
-    const dateObj = {
-        year: date.getFullYear(),
-        month: date.getMonth(),
-        day: date.getDate(),
-        hour: date.getHours(),
-        minute: date.getMinutes(),
-        second: date.getSeconds(),
-    };
-
-    return dateObj;
-};
-
 export const formatDateObjToTime = (dateObj: Record<string, number>): string => {
     const { hour, minute, second } = dateObj;
     const ampm = hour >= 12 ? 'pm' : 'am';
@@ -122,25 +110,6 @@ export const zodiac = (day: number, month: number) => {
     ];
     var last_day = ['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
     return day > last_day[month] ? zodiac[month * 1 + 1] : zodiac[month];
-};
-
-export type Metadata = {
-    name: string;
-    description: string;
-    image: string; // birthblock.art/api/v1/image/[tokenId]
-    external_url: string; // birthblock.art/birthblock/[tokenId]
-    address: string;
-    parent: string;
-    firstRecieved: 'ether' | 'token(s)';
-    treeRings: string;
-    timestamp: number;
-    // birthTime?: string;
-    // date?: number;
-    birthblock: string;
-    txnHash: string;
-    zodiacSign: string;
-    blockAge: number;
-    treeRingsLevel: number;
 };
 
 // birthblock.art/api/v1/metadata/[tokenId]
