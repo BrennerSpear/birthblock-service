@@ -263,8 +263,8 @@ function Home() {
                 </Heading>
                 <Text mt={4} fontWeight="light" maxW="xl">
                     {copy.bottomSectionText}
-                    <Link isExternal href={'https://twitter.com/The_Metagame'}>
-                        @The_Metagame
+                    <Link isExternal href={'https://twitter.com/Metagame'}>
+                        @Metagame
                     </Link>
                 </Text>
             </Box>
