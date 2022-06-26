@@ -26,7 +26,7 @@ export const copy = {
     text3: 'Part of the infant category of earned NFTs where you earn attributes based on your actions. The older your wallet, the bigger your tree.',
     heroSubheading:
         'An NFT with art and attributes based on the data from your first transaction on Ethereum',
-    bottomSectonHeading: 'The Metagame',
+    bottomSectonHeading: 'Metagame',
     bottomSectionText:
         'Birthblock is the first NFT in an infinite series of achievements you earn by playing a game many of us are already playing whether we know it or not: The Metagame. These earned achievements will allow access to private spaces gated by shared experiences. Each achievement will contribute to leveling up your character. Follow along: ',
 };
